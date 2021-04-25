@@ -103,6 +103,6 @@ export default class Updater {
         let div = document.createElement('div')
         div.classList.add('victory')
         div.innerText = `${nick} has won!`
-        document.querySelector('main').append(div)
+        document.querySelector('#main').append(div)
     }
 }
