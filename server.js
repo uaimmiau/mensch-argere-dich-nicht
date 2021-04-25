@@ -13,7 +13,6 @@ const Logic = require('./static/classes/Logic')
 let express = require("express");
 let app = express();
 let path = require("path");
-let uuid = require('uuid');
 const {
     v1: uuidv1,
     v4: uuidv4,
