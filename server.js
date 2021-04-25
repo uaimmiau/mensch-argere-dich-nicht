@@ -116,9 +116,13 @@ app.get('/getUpdates', (req, res) => {
         state = false,
         activePlayer = {},
         timeLeft = 10,
-        pawns = {}
+        pawns = {},
+        finished = false,
+        winner = undefined
     if (room != undefined) {
         state = room.active
+        finished = room.finished
+        winner = room.winner
         timeLeft = Math.floor(((1000 * room.turnTime) - (Date.now() - room.turnStart)) / 1000)
         let player = finder.findActivePlayer(rooms, id)
         if (player != undefined) {
@@ -136,7 +140,9 @@ app.get('/getUpdates', (req, res) => {
         room: {
             state: state,
             activePlayer: activePlayer,
-            timeLeft: timeLeft
+            timeLeft: timeLeft,
+            finished: finished,
+            winner: winner
         },
         pawns: {
             currentPositions: pawns
@@ -166,6 +172,8 @@ app.post('/move', (req, res) => {
     pawn.moveSelf(moves[i])
     player.roll.expires = Date.now()
     room.clearGameInterval()
+    logic.killAllPawnsOnTile(pawn, room, player.color)
+    logic.checkIfPlayerWon(player, room)
     res.end()
 })
 

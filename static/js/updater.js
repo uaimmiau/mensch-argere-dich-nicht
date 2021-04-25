@@ -98,4 +98,11 @@ export default class Updater {
         this.shadow.style.left = `-50px`
         this.shadow.style.top = `0px`
     }
+
+    showVictoryScreen(nick) {
+        let div = document.createElement('div')
+        div.classList.add('victory')
+        div.innerText = `${nick} has won!`
+        document.querySelector('main').append(div)
+    }
 }

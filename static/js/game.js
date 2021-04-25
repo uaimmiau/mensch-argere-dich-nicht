@@ -79,12 +79,16 @@ let interval = setInterval(() => {
         .catch(err => {
             console.error(err)
         })
-}, 500)
+}, 250)
 
 const update = (gameData) => {
     updater.updatePlayers(gameData.players)
     updater.updateRoom(gameData.room)
     updater.updatePawns(gameData.pawns)
+    if (gameData.room.finished) {
+        clearInterval(interval)
+        updater.showVictoryScreen(gameData.room.winner)
+    }
 }
 //-----------------------------------------------//
 //------------------redowanie sie----------------//

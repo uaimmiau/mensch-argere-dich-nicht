@@ -7,6 +7,8 @@ class Room {
         this.turnTime = 31
         this.turn = 1
         this.turnStart = 0
+        this.finished = false
+        this.winner = undefined
     }
 
     addPlayerToRoom(player) {
@@ -49,16 +51,18 @@ class Room {
         this.setGameInterval()
     }
 
-    calculateTimeLeft() {
-
-    }
-
     retrieveAllPawns() {
         let obj = {}
         for (const player of this.players) {
             obj[player.color] = player.pawns
         }
         return obj
+    }
+
+    endGame(nick) {
+        clearInterval(this.interval)
+        this.finished = true
+        this.winner = nick
     }
 
 }
