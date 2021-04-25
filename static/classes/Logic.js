@@ -60,7 +60,7 @@ class Logic {
                     })
                 }
                 // ----sprawdzamy czy przechodzi przez wejscie do domku
-            } else if (pawn.i < endI && newI > endI) {
+            } else if (pawn.i <= endI && newI > endI) {
                 //----sprawdzam czy nie wychodzi poza domek
                 if (newI > (endI + 4)) {
                     tab.push({
@@ -110,8 +110,10 @@ class Logic {
     }
 
     checkIfHouseIndexIsEmpty(pawns, color, i) {
+        if (i > 3) return false
         const pos = this.matrix[color].endPositions[i]
         for (const pawn of pawns) {
+            // console.log(pawn, pos, 'test', i)
             if (pawn.x == pos.x && pawn.y == pos.y)
                 return false
         }
@@ -141,6 +143,7 @@ class Logic {
         for (let player of room.players) {
             if (player.color != color) {
                 for (let i = 0; i < 4; i++) {
+                    if (this.checkIfPawnIsInHouse(player.pawns[i], player.color)[0]) continue
                     if (player.pawns[i].i == pawn.i) {
                         player.pawns[i].x = this.matrix[player.color].startPositions[i].x
                         player.pawns[i].y = this.matrix[player.color].startPositions[i].y
