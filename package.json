@@ -4,8 +4,10 @@
     "description": "test",
     "main": "server.js",
     "dependencies": {
+        "colors": "^1.4.0",
         "cookie-parser": "^1.4.5",
-        "express": "^4.17.1"
+        "express": "^4.17.1",
+        "uuid": "^8.3.2"
     },
     "devDependencies": {},
     "scripts": {
