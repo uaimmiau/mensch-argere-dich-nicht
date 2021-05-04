@@ -54,11 +54,15 @@
 
 #roll {
     width: 100px;
-    border-radius: 25%;
-    border: 3px solid rgb(109, 109, 109);
+    border-radius: 50% 10%;
+    border: 5px solid rgb(0, 0, 0);
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 30px;
+    font-size: 30px;
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
 }
 
 #roll:hover {
@@ -66,9 +70,33 @@
 }
 
 .player {
-    border: 1px solid black;
-    width: 100px;
-    height: 50px;
+    border: 7px solid black;
+    width: 150px;
+    height: 80px;
+    border-radius: 50% 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    color: rgb(255, 255, 255);
+    overflow: hidden;
+    margin: 0 20px;
+}
+
+.redBorder {
+    border: 7px solid rgb(231, 60, 60);
+}
+
+.greenBorder {
+    border: 7px solid rgb(28, 136, 46);
+}
+
+.blueBorder {
+    border: 7px solid rgb(64, 94, 192);
+}
+
+.yellowBorder {
+    border: 7px solid rgb(224, 208, 57);
 }
 
 .ready {
@@ -82,13 +110,32 @@
 }
 
 #dash {
-    border: 1px solid black;
-    height: 30px;
+    font-size: 50px;
 }
 
 #timer {
-    border: 1px solid black;
-    height: 30px;
+    font-size: 80px;
+    margin-right: 20px;
+}
+
+/* Login */
+#login {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(255, 255, 255);
+    font-size: 80px;
+}
+
+#cont {
+    background-color: rgb(58, 59, 56);
+    padding: 30px;
+}
+
+#nickInput {
+    width: 80%;
 }
 
 /* Miganie podjrzyczone ze stacka */
@@ -110,19 +157,57 @@
     width: 100vw;
     height: 100vh;
     background-color: rgb(46, 45, 45);
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: aliceblue;
     font-size: 100px;
 }
 
 
+#nav {
+    width: 100%;
+    display: flex;
+    background-color: rgb(58, 59, 56);
+    padding: 30px;
+    justify-content: space-around;
+    align-items: center;
 
+}
 
+#main {
+    display: flex;
+    justify-content: space-around;
+    /* background-color: rgb(221, 36, 36); */
+    align-items: center;
+    padding: 50px;
+}
 
+#players {
+    display: flex;
 
+}
 
+#timerCont {
+    /* background-color: rgb(61, 216, 255); */
+    display: flex;
+    color: rgb(255, 255, 255);
+    width: 45vw;
+    height: 100px;
+    overflow: hidden;
+    /* justify-content: space-around; */
+    align-items: center;
+}
 
+#diceCont {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
-
+body {
+    background-color: rgb(112, 110, 110);
+}
 
 
 

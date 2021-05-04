@@ -31,6 +31,9 @@ class Room {
 
     setGameInterval() {
         this.interval = setInterval(() => {
+            for (let player of this.players) {
+                player.ready = true
+            }
             this.turnStart = Date.now()
             this.players[this.i].active = false
             this.i++

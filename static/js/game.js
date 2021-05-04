@@ -25,11 +25,32 @@ const showDiceSequence = async (sequence) => {
             dice.style.backgroundImage = `url(../gfx/${roll}.png)`
         else
             dice.style.backgroundImage = `url(../gfx/error.png)`
-
     }
+    engageSynthesis(sequence[sequence.length - 1])
 }
 
 const delay = ms => new Promise(res => setTimeout(res, ms));
+
+const engageSynthesis = (text) => {
+    const synth = window.speechSynthesis
+    let voices = []
+
+    function populateVoiceList() {
+        voices = synth.getVoices()
+    }
+    populateVoiceList()
+
+    if (speechSynthesis.onvoiceschanged !== undefined) {
+        speechSynthesis.onvoiceschanged = populateVoiceList
+    }
+
+    let u = new SpeechSynthesisUtterance()
+    u.text = text
+    u.voice = voices[2]
+    u.rate = 1
+    u.pitch = 1
+    synth.speak(u)
+}
 //-----------------------------------------------//
 //--zrobienie coby sie migalo co sie ma ruszyc---//
 //-----------------------------------------------//
@@ -113,8 +134,8 @@ ready.onclick = () => {
 //-----------------------------------------------//
 //------------wychodzenie z pokoju---------------//
 //-----------------------------------------------//
-let leave = document.querySelector('#leave')
-leave.onclick = () => {
-    document.cookie = "id=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;"
-    location.reload()
-}
+// let leave = document.querySelector('#leave')
+// leave.onclick = () => {
+//     document.cookie = "id=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;"
+//     location.reload()
+// }

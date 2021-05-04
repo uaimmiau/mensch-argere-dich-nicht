@@ -12,22 +12,28 @@
 
 <body>
     <div id="nav">
-        <div class="player">???</div>
-        <div class="player">???</div>
-        <div class="player">???</div>
-        <div class="player">???</div>
+        <div id="players">
+            <div class="player">???</div>
+            <div class="player">???</div>
+            <div class="player">???</div>
+            <div class="player">???</div>
+        </div>
+        <div id="timerCont">
+            <div id="timer"></div>
+            <div id="dash"></div>
+        </div>
         <label class="switch">
             <input type="checkbox" id="ready">
             <span class="slider round"></span>
         </label>
     </div>
     <div id="main">
-        <div id="dice"></div>
-        <div id="roll">
-            Roll
+        <div id="diceCont">
+            <div id="dice"></div>
+            <div id="roll">
+                Roll
+            </div>
         </div>
-        <div id="timer"></div>
-        <div id="dash"></div>
         <div id="board">
             <div class="red pawn"></div>
             <div class="red pawn"></div>
@@ -47,10 +53,10 @@
             <div class="yellow pawn"></div>
             <div class="grey pawn"></div>
         </div>
-        <div id="leave">
-            Leave room
-        </div>
     </div>
+    <!-- <div id="leave">
+        Leave room
+    </div> -->
 </body>
 
 </html>

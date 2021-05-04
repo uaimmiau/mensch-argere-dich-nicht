@@ -24,6 +24,7 @@ export default class Updater {
             } else {
                 elements[i].classList.remove('ready')
             }
+            elements[i].classList.add(`${players[i].color}Border`)
         }
     }
 

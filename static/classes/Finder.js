@@ -38,7 +38,8 @@ class Finder {
                 for (const player of room.players) {
                     tab.push({
                         nick: player.nick,
-                        ready: player.ready
+                        ready: player.ready,
+                        color: player.color
                     })
                 }
             }
